@@ -65,7 +65,6 @@ public class DecisionMaker {
                 while (!entry.hasNextInt()) {
                     System.out.print(user + ", that's not an integer! Try again: ");
                     entry.next();
-                    //Is a entry.nextLine(); needed here to clean scanner?
                 }
 
                 //Initialize their selection and proceed forward if their integer was between 1 and 100
@@ -80,7 +79,7 @@ public class DecisionMaker {
             keepGoing = entry.next().charAt(0);
         }
 
-        //
+        //End program officially
         System.out.println("Bye, " + user + "!");
 
         entry.close();
