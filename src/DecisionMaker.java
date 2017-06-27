@@ -20,17 +20,26 @@ public class DecisionMaker {
     public static void selectionType(int userEntry, String user){
 
         //Display the associated result based on the integer range entered:
-        if ((userEntry % 2 != 0) && (userEntry <= 60)) {
-            System.out.println(user + ", " + userEntry + " is odd");
-        } else if ((userEntry % 2 == 0) && (userEntry <= 25)) {
-            System.out.println(user + ", " + "that's even and less than 25");
-        } else if ((userEntry % 2 == 0) && (userEntry >= 26) && (userEntry <= 60)) {
-            System.out.println(user + ", " + " that's even");
-        } else if ((userEntry % 2 == 0) && (userEntry > 60)) {
-            System.out.println(user + ", " + userEntry + " is even");
-        } else if ((userEntry % 2 != 0) && (userEntry > 60)) {
-            System.out.println(user + ", " + userEntry + " is odd and over 60");
-        } else {
+        if (userEntry % 2 != 0) {
+            if ((userEntry <= 60)) {
+                System.out.println(user + ", " + userEntry + " is odd");
+            }
+            else {
+                System.out.println(user + ", " + userEntry + " is odd and over 60");
+            }
+        }
+        else if (userEntry % 2 == 0) {
+            if (userEntry <= 25) {
+                System.out.println(user + ", " + "that's even and less than 25");
+            }
+            else if ((userEntry >= 26) && (userEntry <= 60)) {
+                System.out.println(user + ", " + " that's even");
+            }
+            else {
+                System.out.println(user + ", " + userEntry + " is even");
+            }
+        }
+        else {
             System.out.println(user + ", " + userEntry + " is not a valid option.");
         }
 
