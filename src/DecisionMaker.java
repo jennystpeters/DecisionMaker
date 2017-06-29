@@ -4,10 +4,9 @@ import java.util.Scanner;
 public class DecisionMaker {
 
     //Get user's name for future outputs
-    public static String getUserName() {
+    public static String getUserName(Scanner entry) {
 
         String nameEntered;
-        Scanner entry = new Scanner(System.in);
 
         System.out.print("Please enter your name: ");
         nameEntered = entry.nextLine();
@@ -52,7 +51,7 @@ public class DecisionMaker {
         Scanner entry = new Scanner(System.in);
 
         //Get user name for future outputs
-        String user = getUserName();
+        String user = getUserName(entry);
 
         //Repeat until user is done (by entering 'n' or anything not starting with 'y' or 'Y')
         while ((keepGoing == 'y') || (keepGoing == 'Y')) {
