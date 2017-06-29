@@ -16,31 +16,35 @@ public class DecisionMaker {
     }
 
     //Determine user's decision based on the integer entered
-    public static void selectionType(int userEntry, String user){
+    public static String selectionType(int userEntry, String user){
+
+        String output = "";
 
         //Display the associated result based on the integer range entered:
         if (userEntry % 2 != 0) {
             if ((userEntry <= 60)) {
-                System.out.println(user + ", " + userEntry + " is odd");
+                output = user + ", " + userEntry + " is odd";
             }
             else {
-                System.out.println(user + ", " + userEntry + " is odd and over 60");
+                output = user + ", " + userEntry + " is odd and over 60";
             }
         }
         else if (userEntry % 2 == 0) {
             if (userEntry <= 25) {
-                System.out.println(user + ", " + "that's even and less than 25");
+                output = user + ", " + "that's even and less than 25";
             }
             else if ((userEntry >= 26) && (userEntry <= 60)) {
-                System.out.println(user + ", " + " that's even");
+                output = user + ", " + " that's even";
             }
             else {
-                System.out.println(user + ", " + userEntry + " is even");
+                output = user + ", " + userEntry + " is even";
             }
         }
         else {
-            System.out.println(user + ", " + userEntry + " is not a valid option.");
+            output = user + ", " + userEntry + " is not a valid option.";
         }
+
+        return output;
 
     }
 
@@ -71,7 +75,7 @@ public class DecisionMaker {
             } while ((selection < 1) || (selection > 100));
 
             //Use selectionType to output corresponding decision made a.k.a selection
-            selectionType(selection, user);
+            System.out.println(selectionType(selection, user));
 
             //Quit if the user decides (again by entering 'n' or anything not starting with 'y' or 'Y')
             System.out.print(user + ", would you like to continue? (y/n): ");
